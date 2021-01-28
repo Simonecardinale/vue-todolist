@@ -25,6 +25,11 @@ var app = new Vue ( {
                 this.arrayList.push(utente);
                 this.utente = ""
             }
+        },
+
+        restoreList(index) {
+            this.arrayList.push(this.trashList[index]);
+            this.trashList.splice(index, 1)
         }
     }
 });

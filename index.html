@@ -35,7 +35,7 @@
         <h2>Trash</h2>
         <div class="container_trash">
             <ul class="trash_list">
-                <li v-for="(items, index) in trashList">{{items}} <i class="fas fa-trash-restore"></i></li>
+                <li v-for="(items, index) in trashList">{{items}} <i class="fas fa-trash-restore" @click="restoreList(index)"></i></li>
             </ul>
         </div>
 
