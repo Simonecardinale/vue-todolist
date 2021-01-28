@@ -20,7 +20,7 @@
         <div class="container_list">
             <ul class="todo_list">
                 <li v-for="(items,index) in arrayList">{{index}}{{items}} 
-                    <i class="fas fa-times-circle" @click="moveToTrash"></i>
+                    <i class="fas fa-times-circle" @click="moveToTrash(index)"></i>
                 </li>
             </ul>
         </div>

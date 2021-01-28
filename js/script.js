@@ -11,8 +11,10 @@ var app = new Vue ( {
     },
 
     methods: {
-        moveToTrash: function(index) {
+        moveToTrash(index) {
             this.trashList.push(this.arrayList[index]);
+            this.arrayList.splice(index, 1)
+            console.log(this.trashList);
         }
     }
 });
