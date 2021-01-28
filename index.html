@@ -18,7 +18,7 @@
         <!-- todo list -->
         <div class="container_input">
             <input v-model="utente" type="text" @keyup.enter ="addList(utente)">
-            <button @click="addList(utente)">Aggiungi</button>
+            <button @click="addList(utente)" @click="checkList" >Aggiungi</button>
         </div> 
         <div class="container_list">
             <ul class="todo_list">
@@ -33,6 +33,7 @@
         <!-- trash -->
 
         <h2>Trash</h2>
+        <h3 @click="totalDelete">Svuota cestino</h3>
         <div class="container_trash">
             <ul class="trash_list">
                 <li v-for="(items, index) in trashList">{{items}} <i class="fas fa-trash-restore" @click="restoreList(index)"></i></li>

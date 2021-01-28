@@ -10,7 +10,7 @@ var app = new Vue ( {
         trashList: [],
         utente: ""
     },
-
+    
     methods: {
         moveToTrash(index) {
             this.trashList.push(this.arrayList[index]);
@@ -27,9 +27,25 @@ var app = new Vue ( {
             }
         },
 
+        checkList: function(utente) {
+            this.arrayList.forEach((element)=> {
+                if(utente == element) {
+                    alert();
+                }
+            })
+            console.log(element);
+        },
+
         restoreList(index) {
             this.arrayList.push(this.trashList[index]);
             this.trashList.splice(index, 1)
+        },
+
+        totalDelete() {
+            const caution = confirm("Attenzione!! Tutti gli elementi verranno eliminati definitivamente. Continuare?");
+            if (caution == true) {
+                this.trashList = [];
+            }
         }
     }
 });
