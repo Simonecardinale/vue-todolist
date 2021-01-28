@@ -34,6 +34,8 @@ h1 {
 
 .todo_list li i, .trash_list li i {
     float: right;
+    padding: 0 20px;
+    cursor: pointer;
 }
 
 h2 {

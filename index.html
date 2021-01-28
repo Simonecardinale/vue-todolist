@@ -24,6 +24,7 @@
             <ul class="todo_list">
                 <li v-for="(items,index) in arrayList">{{items}} 
                     <i class="fas fa-times-circle" @click="moveToTrash(index)"></i>
+                    <i class="fas fa-pencil-alt" @click="rewriteList(index)"></i>
                 </li>
             </ul>
         </div>

@@ -17,24 +17,21 @@ var app = new Vue ( {
             this.arrayList.splice(index, 1)
             console.log(this.trashList);
         },
-
+        
         addList(utente) {
-            if (this.utente.length < "5") {
+            if (this.utente.length < "4") {
                 alert("Devi inserire almeno 4 caratteri")
             } else if (this.arrayList.includes(this.utente)) {
                 const checkList = confirm ("Attenzione!! Hai inserito due volte la stessa attività. Continuare?");
                 if (checkList == true) {
                     this.arrayList.push(utente);
                     this.utente = ""
-                } else {
-                    this.arrayList = this.arrayList;
                 }
             }else {
                 this.arrayList.push(utente);
                 this.utente = ""
             }
         },
-
 
         restoreList(index) {
             this.arrayList.push(this.trashList[index]);
@@ -46,6 +43,11 @@ var app = new Vue ( {
             if (caution == true) {
                 this.trashList = [];
             }
+        },
+
+        rewriteList(index) {
+            const rewrited = prompt("Modifica l'attività");
+            this.arrayList.splice(index, 1, rewrited);
         }
     }
 });
