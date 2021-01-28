@@ -21,20 +21,20 @@ var app = new Vue ( {
         addList(utente) {
             if (this.utente.length < "5") {
                 alert("Devi inserire almeno 4 caratteri")
-            } else {
+            } else if (this.arrayList.includes(this.utente)) {
+                const checkList = confirm ("Attenzione!! Hai inserito due volte la stessa attività. Continuare?");
+                if (checkList == true) {
+                    this.arrayList.push(utente);
+                    this.utente = ""
+                } else {
+                    this.arrayList = this.arrayList;
+                }
+            }else {
                 this.arrayList.push(utente);
                 this.utente = ""
             }
         },
 
-        checkList: function(utente) {
-            this.arrayList.forEach((element)=> {
-                if(utente == element) {
-                    alert();
-                }
-            })
-            console.log(element);
-        },
 
         restoreList(index) {
             this.arrayList.push(this.trashList[index]);
