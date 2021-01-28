@@ -16,10 +16,13 @@
         <h1>TO DO LIST</h1>
 
         <!-- todo list -->
-
+        <div class="container_input">
+            <input v-model="utente" type="text" @keyup.enter ="addList(utente)">
+            <button @click="addList(utente)">Aggiungi</button>
+        </div> 
         <div class="container_list">
             <ul class="todo_list">
-                <li v-for="(items,index) in arrayList">{{index}}{{items}} 
+                <li v-for="(items,index) in arrayList">{{items}} 
                     <i class="fas fa-times-circle" @click="moveToTrash(index)"></i>
                 </li>
             </ul>
@@ -29,6 +32,7 @@
 
         <!-- trash -->
 
+        <h2>Trash</h2>
         <div class="container_trash">
             <ul class="trash_list">
                 <li v-for="(items, index) in trashList">{{items}} <i class="fas fa-trash-restore"></i></li>

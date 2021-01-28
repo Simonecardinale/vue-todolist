@@ -15,11 +15,11 @@ h1 {
     text-align: center;
 }
 
-/* todo list */
+/* todo list - trash list */
 
 .container_list, .container_trash {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 10px;
     background-color: lightgrey;
 }
@@ -34,4 +34,16 @@ h1 {
 
 .todo_list li i, .trash_list li i {
     float: right;
+}
+
+h2 {
+    margin-top: 50px;
+    padding: 0 70px;
+}
+
+.container_input {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
 }

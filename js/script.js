@@ -7,7 +7,8 @@ var app = new Vue ( {
             'Andare in palestra',
             'Aperitivo'
         ],
-        trashList: []
+        trashList: [],
+        utente: ""
     },
 
     methods: {
@@ -15,6 +16,15 @@ var app = new Vue ( {
             this.trashList.push(this.arrayList[index]);
             this.arrayList.splice(index, 1)
             console.log(this.trashList);
+        },
+
+        addList(utente) {
+            if (this.utente.length < "5") {
+                alert("Devi inserire almeno 4 caratteri")
+            } else {
+                this.arrayList.push(utente);
+                this.utente = ""
+            }
         }
     }
 });
