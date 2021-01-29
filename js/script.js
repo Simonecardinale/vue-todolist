@@ -38,6 +38,13 @@ var app = new Vue ( {
             this.trashList.splice(index, 1)
         },
 
+        allRestore(){
+            this.trashList.forEach((element)=> {
+                this.arrayList.push(element);
+            });
+            this.trashList=[];
+        },
+
         totalDelete() {
             const caution = confirm("Attenzione!! Tutti gli elementi verranno eliminati definitivamente. Continuare?");
             if (caution == true) {

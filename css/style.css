@@ -46,6 +46,7 @@ h2 {
 h3 {
     float: right;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 .container_input {
