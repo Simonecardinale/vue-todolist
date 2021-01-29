@@ -45,9 +45,30 @@ var app = new Vue ( {
             }
         },
 
+        allDelete() {
+            const caution = confirm("Attenzione!! Tutti gli elementi verranno eliminati. Continuare?");
+            if (caution == true) {
+                this.arrayList.forEach((element)=> {
+                    this.trashList.push(element);
+                });
+                this.arrayList=[];
+            }
+        },
+
+        singleDelete(index){
+            const singleCaution = confirm("Attenzione!! L'elemento selezionato verrà eliminato definitivamente. Continuare?");
+            if (singleCaution == true) {
+                this.trashList.splice(index, 1);
+            }
+        },
+
         rewriteList(index) {
             const rewrited = prompt("Modifica l'attività");
-            this.arrayList.splice(index, 1, rewrited);
+            if (rewrited.length > 3) {
+                this.arrayList.splice(index, 1, rewrited);
+            } else {
+                alert("Devi inserire almeno 4 caratteri");
+            }
         }
     }
 });

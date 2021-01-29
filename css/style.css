@@ -19,7 +19,7 @@ h1 {
 
 .container_list, .container_trash {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 10px;
     background-color: lightgrey;
 }
