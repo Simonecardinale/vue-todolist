@@ -19,16 +19,17 @@ var app = new Vue ( {
         },
         
         addList(utente) {
-            if (this.utente.length < "4") {
+            const newUtente = this.utente.charAt(0).toUpperCase()+this.utente.slice(1);
+            if (newUtente.length < "4") {
                 alert("Devi inserire almeno 4 caratteri")
-            } else if (this.arrayList.includes(this.utente)) {
+            } else if (this.arrayList.includes(newUtente)) {
                 const checkList = confirm ("Attenzione!! Hai inserito due volte la stessa attività. Continuare?");
                 if (checkList == true) {
-                    this.arrayList.push(utente);
+                    this.arrayList.push(newUtente);
                     this.utente = ""
                 }
             }else {
-                this.arrayList.push(utente);
+                this.arrayList.push(newUtente);
                 this.utente = ""
             }
         },
@@ -79,3 +80,5 @@ var app = new Vue ( {
         }
     }
 });
+
+
